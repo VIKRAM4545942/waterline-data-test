@@ -6,88 +6,11 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-        <link rel="stylesheet" href="./resources/qgis2web.css">
-<style>
-.search-layer {
-  top: 100px;
-  left: .5em;
-}
-.ol-touch .search-layer {
-  top: 130px;
-}
-</style>
-        <style>
-        html, body {
-            background-color: #ffffff;
-        }
-        .ol-control button {
-            background-color: #f8f8f8 !important;
-            color: #000000 !important;
-            border-radius: 0px !important;
-        }
-        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 3px !important;
-        }
-        .ol-scale-line {
-            background: none !important;
-        }
-        .ol-scale-line-inner {
-            border: 2px solid #f8f8f8 !important;
-            border-top: none !important;
-            background: rgba(255, 255, 255, 0.5) !important;
-            color: black !important;
-        }
-        </style>
-<style>
-.tooltip {
-  position: relative;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  color: white;
-  padding: 4px 8px;
-  opacity: 0.7;
-  white-space: nowrap;
-}
-.tooltip-measure {
-  opacity: 1;
-  font-weight: bold;
-}
-.tooltip-static {
-  background-color: #ffcc33;
-  color: black;
-  border: 1px solid white;
-}
-.tooltip-measure:before,
-.tooltip-static:before {
-  border-top: 6px solid rgba(0, 0, 0, 0.5);
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  margin-left: -7px;
-  left: 50%;
-}
-.tooltip-static:before {
-  border-top-color: #ffcc33;
-}
-.measure-control {
-  top: 65px;
-  left: .5em;
-  display: flex;
-}
-.ol-touch .measure-control {
-  top: 80px;
-}
-.measure-control label {
-  padding: 1px;
-  padding-right: 4px;
-}
-</style>
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/L.Control.Layers.Tree.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -100,20 +23,3055 @@
     </head>
     <body>
         <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
-            </div>
         </div>
-        <script src="resources/qgis2web_expressions.js"></script>
-        <script src="resources/polyfills.js"></script>
-        <script src="./resources/functions.js"></script>
-        <script src="./resources/ol.js"></script>
-        <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="layers/Grid_SHP_4.js"></script><script src="layers/MurvaWaterStation_5.js"></script><script src="layers/KashmiraWaterStation_6.js"></script><script src="layers/KashimiraWaterTank_7.js"></script><script src="layers/ChinaWaterStation_8.js"></script><script src="layers/ChinaVillageWaterTank_9.js"></script><script src="layers/MiraMIDCWaterTank_10.js"></script><script src="layers/MiraMIDCWaterStation_11.js"></script><script src="layers/MiraGavWaterStation_12.js"></script><script src="layers/MiraGavWaterTank_13.js"></script><script src="layers/DongriWaterTank_14.js"></script><script src="layers/DongriWaterStation_15.js"></script><script src="layers/MurvaWaterTank_16.js"></script><script src="layers/PanjuWaterStation_17.js"></script><script src="layers/PanjuWaterTank_18.js"></script><script src="layers/SudamaWaterStation_19.js"></script><script src="layers/SudamaWaterTank_20.js"></script><script src="layers/GoddevWaterTank_21.js"></script><script src="layers/GoddevWaterStation_22.js"></script><script src="layers/777WaterTank_23.js"></script><script src="layers/777WaterStation_24.js"></script><script src="layers/KamlanagarWaterStation_25.js"></script><script src="layers/KamlanagarWaterTank_26.js"></script><script src="layers/AsmitaWaterStation_27.js"></script><script src="layers/AsmitaWaterTank_28.js"></script><script src="layers/11NoWaterTank_29.js"></script><script src="layers/SilverWaterStation_30.js"></script><script src="layers/SilverLineWaterTank_31.js"></script><script src="layers/NavgharWaterTank_32.js"></script><script src="layers/NavgharWaterStation_33.js"></script><script src="layers/KanakiyaWaterTank_34.js"></script><script src="layers/KanakiyaWaterStation_35.js"></script><script src="layers/GodibunderWaterStation_36.js"></script><script src="layers/GodibunderWaterTank_37.js"></script><script src="layers/PatlipadaStemOffice_38.js"></script><script src="layers/PatlipadaWaterTank_39.js"></script><script src="layers/PumpStation_40.js"></script><script src="layers/PhataFillingStation_41.js"></script><script src="layers/Stem_MBR15ML_42.js"></script><script src="layers/StemMBR_43.js"></script><script src="layers/Road_44.js"></script><script src="layers/UlhasRiver_45.js"></script><script src="layers/CLF_46.js"></script><script src="layers/StemInfrastructure_47.js"></script><script src="layers/TMCWTP_48.js"></script><script src="layers/Waterline_49.js"></script><script src="layers/MBMC_Ward_Boundry_50.js"></script><script src="layers/BNCMCWardBoundry_51.js"></script><script src="layers/STEM_Village_DB_52.js"></script>
-        <script src="styles/Grid_SHP_4_style.js"></script><script src="styles/MurvaWaterStation_5_style.js"></script><script src="styles/KashmiraWaterStation_6_style.js"></script><script src="styles/KashimiraWaterTank_7_style.js"></script><script src="styles/ChinaWaterStation_8_style.js"></script><script src="styles/ChinaVillageWaterTank_9_style.js"></script><script src="styles/MiraMIDCWaterTank_10_style.js"></script><script src="styles/MiraMIDCWaterStation_11_style.js"></script><script src="styles/MiraGavWaterStation_12_style.js"></script><script src="styles/MiraGavWaterTank_13_style.js"></script><script src="styles/DongriWaterTank_14_style.js"></script><script src="styles/DongriWaterStation_15_style.js"></script><script src="styles/MurvaWaterTank_16_style.js"></script><script src="styles/PanjuWaterStation_17_style.js"></script><script src="styles/PanjuWaterTank_18_style.js"></script><script src="styles/SudamaWaterStation_19_style.js"></script><script src="styles/SudamaWaterTank_20_style.js"></script><script src="styles/GoddevWaterTank_21_style.js"></script><script src="styles/GoddevWaterStation_22_style.js"></script><script src="styles/777WaterTank_23_style.js"></script><script src="styles/777WaterStation_24_style.js"></script><script src="styles/KamlanagarWaterStation_25_style.js"></script><script src="styles/KamlanagarWaterTank_26_style.js"></script><script src="styles/AsmitaWaterStation_27_style.js"></script><script src="styles/AsmitaWaterTank_28_style.js"></script><script src="styles/11NoWaterTank_29_style.js"></script><script src="styles/SilverWaterStation_30_style.js"></script><script src="styles/SilverLineWaterTank_31_style.js"></script><script src="styles/NavgharWaterTank_32_style.js"></script><script src="styles/NavgharWaterStation_33_style.js"></script><script src="styles/KanakiyaWaterTank_34_style.js"></script><script src="styles/KanakiyaWaterStation_35_style.js"></script><script src="styles/GodibunderWaterStation_36_style.js"></script><script src="styles/GodibunderWaterTank_37_style.js"></script><script src="styles/PatlipadaStemOffice_38_style.js"></script><script src="styles/PatlipadaWaterTank_39_style.js"></script><script src="styles/PumpStation_40_style.js"></script><script src="styles/PhataFillingStation_41_style.js"></script><script src="styles/Stem_MBR15ML_42_style.js"></script><script src="styles/StemMBR_43_style.js"></script><script src="styles/Road_44_style.js"></script><script src="styles/UlhasRiver_45_style.js"></script><script src="styles/CLF_46_style.js"></script><script src="styles/StemInfrastructure_47_style.js"></script><script src="styles/TMCWTP_48_style.js"></script><script src="styles/Waterline_49_style.js"></script><script src="styles/MBMC_Ward_Boundry_50_style.js"></script><script src="styles/BNCMCWardBoundry_51_style.js"></script><script src="styles/STEM_Village_DB_52_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
-        <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/qgis2web.js"></script>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/L.Control.Layers.Tree.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/Grid_SHP_2.js"></script>
+        <script src="data/MurvaWaterStation_3.js"></script>
+        <script src="data/KashmiraWaterStation_4.js"></script>
+        <script src="data/KashimiraWaterTank_5.js"></script>
+        <script src="data/ChinaWaterStation_6.js"></script>
+        <script src="data/ChinaVillageWaterTank_7.js"></script>
+        <script src="data/MiraMIDCWaterTank_8.js"></script>
+        <script src="data/MiraMIDCWaterStation_9.js"></script>
+        <script src="data/MiraGavWaterStation_10.js"></script>
+        <script src="data/MiraGavWaterTank_11.js"></script>
+        <script src="data/DongriWaterTank_12.js"></script>
+        <script src="data/DongriWaterStation_13.js"></script>
+        <script src="data/MurvaWaterTank_14.js"></script>
+        <script src="data/PanjuWaterStation_15.js"></script>
+        <script src="data/PanjuWaterTank_16.js"></script>
+        <script src="data/SudamaWaterStation_17.js"></script>
+        <script src="data/SudamaWaterTank_18.js"></script>
+        <script src="data/GoddevWaterTank_19.js"></script>
+        <script src="data/GoddevWaterStation_20.js"></script>
+        <script src="data/777WaterTank_21.js"></script>
+        <script src="data/777WaterStation_22.js"></script>
+        <script src="data/KamlanagarWaterStation_23.js"></script>
+        <script src="data/KamlanagarWaterTank_24.js"></script>
+        <script src="data/AsmitaWaterStation_25.js"></script>
+        <script src="data/AsmitaWaterTank_26.js"></script>
+        <script src="data/11NoWaterTank_27.js"></script>
+        <script src="data/SilverWaterStation_28.js"></script>
+        <script src="data/SilverLineWaterTank_29.js"></script>
+        <script src="data/NavgharWaterTank_30.js"></script>
+        <script src="data/NavgharWaterStation_31.js"></script>
+        <script src="data/KanakiyaWaterTank_32.js"></script>
+        <script src="data/KanakiyaWaterStation_33.js"></script>
+        <script src="data/GodibunderWaterStation_34.js"></script>
+        <script src="data/GodibunderWaterTank_35.js"></script>
+        <script src="data/PatlipadaStemOffice_36.js"></script>
+        <script src="data/PatlipadaWaterTank_37.js"></script>
+        <script src="data/PumpStation_38.js"></script>
+        <script src="data/PhataFillingStation_39.js"></script>
+        <script src="data/Stem_MBR15ML_40.js"></script>
+        <script src="data/Road_41.js"></script>
+        <script src="data/UlhasRiver_42.js"></script>
+        <script src="data/CLF_43.js"></script>
+        <script src="data/StemInfrastructure_44.js"></script>
+        <script src="data/TMCWTP_45.js"></script>
+        <script src="data/Waterline_46.js"></script>
+        <script src="data/MBMC_Ward_Boundry_47.js"></script>
+        <script src="data/BNCMCWardBoundry_48.js"></script>
+        <script src="data/STEM_Village_DB_49.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString' || e.target.feature.geometry.type === 'MultiLineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[19.019674761632633,72.70393892406925],[19.457879093072552,73.30548194418218]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        function removeEmptyRowsFromPopupContent(content, feature) {
+         var tempDiv = document.createElement('div');
+         tempDiv.innerHTML = content;
+         var rows = tempDiv.querySelectorAll('tr');
+         for (var i = 0; i < rows.length; i++) {
+             var td = rows[i].querySelector('td.visible-with-data');
+             var key = td ? td.id : '';
+             if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                 rows[i].parentNode.removeChild(rows[i]);
+             }
+         }
+         return tempDiv.innerHTML;
+        }
+        document.querySelector(".leaflet-popup-pane").addEventListener("load", function(event) {
+          var tagName = event.target.tagName,
+            popup = map._popup;
+          // Also check if flag is already set.
+          if (tagName === "IMG" && popup && !popup._updated) {
+            popup._updated = true; // Set flag to prevent looping.
+            popup.update();
+          }
+        }, true);
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_GoogleSatellite_0');
+        map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
+        var layer_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+        });
+        layer_GoogleSatellite_0;
+        map.addLayer(layer_GoogleSatellite_0);
+        map.createPane('pane_Merge_Toposheet_1');
+        map.getPane('pane_Merge_Toposheet_1').style.zIndex = 401;
+        var img_Merge_Toposheet_1 = 'data/Merge_Toposheet_1.png';
+        var img_bounds_Merge_Toposheet_1 = [[18.999999476396024,72.71664369],[19.499998951,73.24999751428422]];
+        var layer_Merge_Toposheet_1 = new L.imageOverlay(img_Merge_Toposheet_1,
+                                              img_bounds_Merge_Toposheet_1,
+                                              {pane: 'pane_Merge_Toposheet_1'});
+        bounds_group.addLayer(layer_Merge_Toposheet_1);
+        map.addLayer(layer_Merge_Toposheet_1);
+        function pop_Grid_SHP_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Grid_SHP_2_0() {
+            return {
+                pane: 'pane_Grid_SHP_2',
+                opacity: 1,
+                color: 'rgba(251,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,0,255,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Grid_SHP_2');
+        map.getPane('pane_Grid_SHP_2').style.zIndex = 402;
+        map.getPane('pane_Grid_SHP_2').style['mix-blend-mode'] = 'normal';
+        var layer_Grid_SHP_2 = new L.geoJson(json_Grid_SHP_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Grid_SHP_2',
+            layerName: 'layer_Grid_SHP_2',
+            pane: 'pane_Grid_SHP_2',
+            onEachFeature: pop_Grid_SHP_2,
+            style: style_Grid_SHP_2_0,
+        });
+        bounds_group.addLayer(layer_Grid_SHP_2);
+        map.addLayer(layer_Grid_SHP_2);
+        function pop_MurvaWaterStation_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MurvaWaterStation_3_0() {
+            return {
+                pane: 'pane_MurvaWaterStation_3',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MurvaWaterStation_3');
+        map.getPane('pane_MurvaWaterStation_3').style.zIndex = 403;
+        map.getPane('pane_MurvaWaterStation_3').style['mix-blend-mode'] = 'normal';
+        var layer_MurvaWaterStation_3 = new L.geoJson(json_MurvaWaterStation_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MurvaWaterStation_3',
+            layerName: 'layer_MurvaWaterStation_3',
+            pane: 'pane_MurvaWaterStation_3',
+            onEachFeature: pop_MurvaWaterStation_3,
+            style: style_MurvaWaterStation_3_0,
+        });
+        bounds_group.addLayer(layer_MurvaWaterStation_3);
+        map.addLayer(layer_MurvaWaterStation_3);
+        function pop_KashmiraWaterStation_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KashmiraWaterStation_4_0() {
+            return {
+                pane: 'pane_KashmiraWaterStation_4',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KashmiraWaterStation_4');
+        map.getPane('pane_KashmiraWaterStation_4').style.zIndex = 404;
+        map.getPane('pane_KashmiraWaterStation_4').style['mix-blend-mode'] = 'normal';
+        var layer_KashmiraWaterStation_4 = new L.geoJson(json_KashmiraWaterStation_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KashmiraWaterStation_4',
+            layerName: 'layer_KashmiraWaterStation_4',
+            pane: 'pane_KashmiraWaterStation_4',
+            onEachFeature: pop_KashmiraWaterStation_4,
+            style: style_KashmiraWaterStation_4_0,
+        });
+        bounds_group.addLayer(layer_KashmiraWaterStation_4);
+        map.addLayer(layer_KashmiraWaterStation_4);
+        function pop_KashimiraWaterTank_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KashimiraWaterTank_5_0() {
+            return {
+                pane: 'pane_KashimiraWaterTank_5',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KashimiraWaterTank_5');
+        map.getPane('pane_KashimiraWaterTank_5').style.zIndex = 405;
+        map.getPane('pane_KashimiraWaterTank_5').style['mix-blend-mode'] = 'normal';
+        var layer_KashimiraWaterTank_5 = new L.geoJson(json_KashimiraWaterTank_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KashimiraWaterTank_5',
+            layerName: 'layer_KashimiraWaterTank_5',
+            pane: 'pane_KashimiraWaterTank_5',
+            onEachFeature: pop_KashimiraWaterTank_5,
+            style: style_KashimiraWaterTank_5_0,
+        });
+        bounds_group.addLayer(layer_KashimiraWaterTank_5);
+        map.addLayer(layer_KashimiraWaterTank_5);
+        function pop_ChinaWaterStation_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_ChinaWaterStation_6_0() {
+            return {
+                pane: 'pane_ChinaWaterStation_6',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ChinaWaterStation_6');
+        map.getPane('pane_ChinaWaterStation_6').style.zIndex = 406;
+        map.getPane('pane_ChinaWaterStation_6').style['mix-blend-mode'] = 'normal';
+        var layer_ChinaWaterStation_6 = new L.geoJson(json_ChinaWaterStation_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ChinaWaterStation_6',
+            layerName: 'layer_ChinaWaterStation_6',
+            pane: 'pane_ChinaWaterStation_6',
+            onEachFeature: pop_ChinaWaterStation_6,
+            style: style_ChinaWaterStation_6_0,
+        });
+        bounds_group.addLayer(layer_ChinaWaterStation_6);
+        map.addLayer(layer_ChinaWaterStation_6);
+        function pop_ChinaVillageWaterTank_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_ChinaVillageWaterTank_7_0() {
+            return {
+                pane: 'pane_ChinaVillageWaterTank_7',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ChinaVillageWaterTank_7');
+        map.getPane('pane_ChinaVillageWaterTank_7').style.zIndex = 407;
+        map.getPane('pane_ChinaVillageWaterTank_7').style['mix-blend-mode'] = 'normal';
+        var layer_ChinaVillageWaterTank_7 = new L.geoJson(json_ChinaVillageWaterTank_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ChinaVillageWaterTank_7',
+            layerName: 'layer_ChinaVillageWaterTank_7',
+            pane: 'pane_ChinaVillageWaterTank_7',
+            onEachFeature: pop_ChinaVillageWaterTank_7,
+            style: style_ChinaVillageWaterTank_7_0,
+        });
+        bounds_group.addLayer(layer_ChinaVillageWaterTank_7);
+        map.addLayer(layer_ChinaVillageWaterTank_7);
+        function pop_MiraMIDCWaterTank_8(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MiraMIDCWaterTank_8_0() {
+            return {
+                pane: 'pane_MiraMIDCWaterTank_8',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MiraMIDCWaterTank_8');
+        map.getPane('pane_MiraMIDCWaterTank_8').style.zIndex = 408;
+        map.getPane('pane_MiraMIDCWaterTank_8').style['mix-blend-mode'] = 'normal';
+        var layer_MiraMIDCWaterTank_8 = new L.geoJson(json_MiraMIDCWaterTank_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MiraMIDCWaterTank_8',
+            layerName: 'layer_MiraMIDCWaterTank_8',
+            pane: 'pane_MiraMIDCWaterTank_8',
+            onEachFeature: pop_MiraMIDCWaterTank_8,
+            style: style_MiraMIDCWaterTank_8_0,
+        });
+        bounds_group.addLayer(layer_MiraMIDCWaterTank_8);
+        map.addLayer(layer_MiraMIDCWaterTank_8);
+        function pop_MiraMIDCWaterStation_9(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MiraMIDCWaterStation_9_0() {
+            return {
+                pane: 'pane_MiraMIDCWaterStation_9',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MiraMIDCWaterStation_9');
+        map.getPane('pane_MiraMIDCWaterStation_9').style.zIndex = 409;
+        map.getPane('pane_MiraMIDCWaterStation_9').style['mix-blend-mode'] = 'normal';
+        var layer_MiraMIDCWaterStation_9 = new L.geoJson(json_MiraMIDCWaterStation_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MiraMIDCWaterStation_9',
+            layerName: 'layer_MiraMIDCWaterStation_9',
+            pane: 'pane_MiraMIDCWaterStation_9',
+            onEachFeature: pop_MiraMIDCWaterStation_9,
+            style: style_MiraMIDCWaterStation_9_0,
+        });
+        bounds_group.addLayer(layer_MiraMIDCWaterStation_9);
+        map.addLayer(layer_MiraMIDCWaterStation_9);
+        function pop_MiraGavWaterStation_10(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MiraGavWaterStation_10_0() {
+            return {
+                pane: 'pane_MiraGavWaterStation_10',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MiraGavWaterStation_10');
+        map.getPane('pane_MiraGavWaterStation_10').style.zIndex = 410;
+        map.getPane('pane_MiraGavWaterStation_10').style['mix-blend-mode'] = 'normal';
+        var layer_MiraGavWaterStation_10 = new L.geoJson(json_MiraGavWaterStation_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MiraGavWaterStation_10',
+            layerName: 'layer_MiraGavWaterStation_10',
+            pane: 'pane_MiraGavWaterStation_10',
+            onEachFeature: pop_MiraGavWaterStation_10,
+            style: style_MiraGavWaterStation_10_0,
+        });
+        bounds_group.addLayer(layer_MiraGavWaterStation_10);
+        map.addLayer(layer_MiraGavWaterStation_10);
+        function pop_MiraGavWaterTank_11(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MiraGavWaterTank_11_0() {
+            return {
+                pane: 'pane_MiraGavWaterTank_11',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MiraGavWaterTank_11');
+        map.getPane('pane_MiraGavWaterTank_11').style.zIndex = 411;
+        map.getPane('pane_MiraGavWaterTank_11').style['mix-blend-mode'] = 'normal';
+        var layer_MiraGavWaterTank_11 = new L.geoJson(json_MiraGavWaterTank_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MiraGavWaterTank_11',
+            layerName: 'layer_MiraGavWaterTank_11',
+            pane: 'pane_MiraGavWaterTank_11',
+            onEachFeature: pop_MiraGavWaterTank_11,
+            style: style_MiraGavWaterTank_11_0,
+        });
+        bounds_group.addLayer(layer_MiraGavWaterTank_11);
+        map.addLayer(layer_MiraGavWaterTank_11);
+        function pop_DongriWaterTank_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Labels'] !== null ? autolinker.link(feature.properties['Labels'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_DongriWaterTank_12_0() {
+            return {
+                pane: 'pane_DongriWaterTank_12',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_DongriWaterTank_12');
+        map.getPane('pane_DongriWaterTank_12').style.zIndex = 412;
+        map.getPane('pane_DongriWaterTank_12').style['mix-blend-mode'] = 'normal';
+        var layer_DongriWaterTank_12 = new L.geoJson(json_DongriWaterTank_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_DongriWaterTank_12',
+            layerName: 'layer_DongriWaterTank_12',
+            pane: 'pane_DongriWaterTank_12',
+            onEachFeature: pop_DongriWaterTank_12,
+            style: style_DongriWaterTank_12_0,
+        });
+        bounds_group.addLayer(layer_DongriWaterTank_12);
+        map.addLayer(layer_DongriWaterTank_12);
+        function pop_DongriWaterStation_13(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_DongriWaterStation_13_0() {
+            return {
+                pane: 'pane_DongriWaterStation_13',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_DongriWaterStation_13');
+        map.getPane('pane_DongriWaterStation_13').style.zIndex = 413;
+        map.getPane('pane_DongriWaterStation_13').style['mix-blend-mode'] = 'normal';
+        var layer_DongriWaterStation_13 = new L.geoJson(json_DongriWaterStation_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_DongriWaterStation_13',
+            layerName: 'layer_DongriWaterStation_13',
+            pane: 'pane_DongriWaterStation_13',
+            onEachFeature: pop_DongriWaterStation_13,
+            style: style_DongriWaterStation_13_0,
+        });
+        bounds_group.addLayer(layer_DongriWaterStation_13);
+        map.addLayer(layer_DongriWaterStation_13);
+        function pop_MurvaWaterTank_14(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MurvaWaterTank_14_0() {
+            return {
+                pane: 'pane_MurvaWaterTank_14',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MurvaWaterTank_14');
+        map.getPane('pane_MurvaWaterTank_14').style.zIndex = 414;
+        map.getPane('pane_MurvaWaterTank_14').style['mix-blend-mode'] = 'normal';
+        var layer_MurvaWaterTank_14 = new L.geoJson(json_MurvaWaterTank_14, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MurvaWaterTank_14',
+            layerName: 'layer_MurvaWaterTank_14',
+            pane: 'pane_MurvaWaterTank_14',
+            onEachFeature: pop_MurvaWaterTank_14,
+            style: style_MurvaWaterTank_14_0,
+        });
+        bounds_group.addLayer(layer_MurvaWaterTank_14);
+        map.addLayer(layer_MurvaWaterTank_14);
+        function pop_PanjuWaterStation_15(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PanjuWaterStation_15_0() {
+            return {
+                pane: 'pane_PanjuWaterStation_15',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PanjuWaterStation_15');
+        map.getPane('pane_PanjuWaterStation_15').style.zIndex = 415;
+        map.getPane('pane_PanjuWaterStation_15').style['mix-blend-mode'] = 'normal';
+        var layer_PanjuWaterStation_15 = new L.geoJson(json_PanjuWaterStation_15, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PanjuWaterStation_15',
+            layerName: 'layer_PanjuWaterStation_15',
+            pane: 'pane_PanjuWaterStation_15',
+            onEachFeature: pop_PanjuWaterStation_15,
+            style: style_PanjuWaterStation_15_0,
+        });
+        bounds_group.addLayer(layer_PanjuWaterStation_15);
+        map.addLayer(layer_PanjuWaterStation_15);
+        function pop_PanjuWaterTank_16(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PanjuWaterTank_16_0() {
+            return {
+                pane: 'pane_PanjuWaterTank_16',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PanjuWaterTank_16');
+        map.getPane('pane_PanjuWaterTank_16').style.zIndex = 416;
+        map.getPane('pane_PanjuWaterTank_16').style['mix-blend-mode'] = 'normal';
+        var layer_PanjuWaterTank_16 = new L.geoJson(json_PanjuWaterTank_16, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PanjuWaterTank_16',
+            layerName: 'layer_PanjuWaterTank_16',
+            pane: 'pane_PanjuWaterTank_16',
+            onEachFeature: pop_PanjuWaterTank_16,
+            style: style_PanjuWaterTank_16_0,
+        });
+        bounds_group.addLayer(layer_PanjuWaterTank_16);
+        map.addLayer(layer_PanjuWaterTank_16);
+        function pop_SudamaWaterStation_17(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_SudamaWaterStation_17_0() {
+            return {
+                pane: 'pane_SudamaWaterStation_17',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SudamaWaterStation_17');
+        map.getPane('pane_SudamaWaterStation_17').style.zIndex = 417;
+        map.getPane('pane_SudamaWaterStation_17').style['mix-blend-mode'] = 'normal';
+        var layer_SudamaWaterStation_17 = new L.geoJson(json_SudamaWaterStation_17, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SudamaWaterStation_17',
+            layerName: 'layer_SudamaWaterStation_17',
+            pane: 'pane_SudamaWaterStation_17',
+            onEachFeature: pop_SudamaWaterStation_17,
+            style: style_SudamaWaterStation_17_0,
+        });
+        bounds_group.addLayer(layer_SudamaWaterStation_17);
+        map.addLayer(layer_SudamaWaterStation_17);
+        function pop_SudamaWaterTank_18(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_SudamaWaterTank_18_0() {
+            return {
+                pane: 'pane_SudamaWaterTank_18',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SudamaWaterTank_18');
+        map.getPane('pane_SudamaWaterTank_18').style.zIndex = 418;
+        map.getPane('pane_SudamaWaterTank_18').style['mix-blend-mode'] = 'normal';
+        var layer_SudamaWaterTank_18 = new L.geoJson(json_SudamaWaterTank_18, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SudamaWaterTank_18',
+            layerName: 'layer_SudamaWaterTank_18',
+            pane: 'pane_SudamaWaterTank_18',
+            onEachFeature: pop_SudamaWaterTank_18,
+            style: style_SudamaWaterTank_18_0,
+        });
+        bounds_group.addLayer(layer_SudamaWaterTank_18);
+        map.addLayer(layer_SudamaWaterTank_18);
+        function pop_GoddevWaterTank_19(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_GoddevWaterTank_19_0() {
+            return {
+                pane: 'pane_GoddevWaterTank_19',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GoddevWaterTank_19');
+        map.getPane('pane_GoddevWaterTank_19').style.zIndex = 419;
+        map.getPane('pane_GoddevWaterTank_19').style['mix-blend-mode'] = 'normal';
+        var layer_GoddevWaterTank_19 = new L.geoJson(json_GoddevWaterTank_19, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GoddevWaterTank_19',
+            layerName: 'layer_GoddevWaterTank_19',
+            pane: 'pane_GoddevWaterTank_19',
+            onEachFeature: pop_GoddevWaterTank_19,
+            style: style_GoddevWaterTank_19_0,
+        });
+        bounds_group.addLayer(layer_GoddevWaterTank_19);
+        map.addLayer(layer_GoddevWaterTank_19);
+        function pop_GoddevWaterStation_20(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_GoddevWaterStation_20_0() {
+            return {
+                pane: 'pane_GoddevWaterStation_20',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GoddevWaterStation_20');
+        map.getPane('pane_GoddevWaterStation_20').style.zIndex = 420;
+        map.getPane('pane_GoddevWaterStation_20').style['mix-blend-mode'] = 'normal';
+        var layer_GoddevWaterStation_20 = new L.geoJson(json_GoddevWaterStation_20, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GoddevWaterStation_20',
+            layerName: 'layer_GoddevWaterStation_20',
+            pane: 'pane_GoddevWaterStation_20',
+            onEachFeature: pop_GoddevWaterStation_20,
+            style: style_GoddevWaterStation_20_0,
+        });
+        bounds_group.addLayer(layer_GoddevWaterStation_20);
+        map.addLayer(layer_GoddevWaterStation_20);
+        function pop_777WaterTank_21(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_777WaterTank_21_0() {
+            return {
+                pane: 'pane_777WaterTank_21',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_777WaterTank_21');
+        map.getPane('pane_777WaterTank_21').style.zIndex = 421;
+        map.getPane('pane_777WaterTank_21').style['mix-blend-mode'] = 'normal';
+        var layer_777WaterTank_21 = new L.geoJson(json_777WaterTank_21, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_777WaterTank_21',
+            layerName: 'layer_777WaterTank_21',
+            pane: 'pane_777WaterTank_21',
+            onEachFeature: pop_777WaterTank_21,
+            style: style_777WaterTank_21_0,
+        });
+        bounds_group.addLayer(layer_777WaterTank_21);
+        map.addLayer(layer_777WaterTank_21);
+        function pop_777WaterStation_22(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_777WaterStation_22_0() {
+            return {
+                pane: 'pane_777WaterStation_22',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_777WaterStation_22');
+        map.getPane('pane_777WaterStation_22').style.zIndex = 422;
+        map.getPane('pane_777WaterStation_22').style['mix-blend-mode'] = 'normal';
+        var layer_777WaterStation_22 = new L.geoJson(json_777WaterStation_22, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_777WaterStation_22',
+            layerName: 'layer_777WaterStation_22',
+            pane: 'pane_777WaterStation_22',
+            onEachFeature: pop_777WaterStation_22,
+            style: style_777WaterStation_22_0,
+        });
+        bounds_group.addLayer(layer_777WaterStation_22);
+        map.addLayer(layer_777WaterStation_22);
+        function pop_KamlanagarWaterStation_23(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KamlanagarWaterStation_23_0() {
+            return {
+                pane: 'pane_KamlanagarWaterStation_23',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KamlanagarWaterStation_23');
+        map.getPane('pane_KamlanagarWaterStation_23').style.zIndex = 423;
+        map.getPane('pane_KamlanagarWaterStation_23').style['mix-blend-mode'] = 'normal';
+        var layer_KamlanagarWaterStation_23 = new L.geoJson(json_KamlanagarWaterStation_23, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KamlanagarWaterStation_23',
+            layerName: 'layer_KamlanagarWaterStation_23',
+            pane: 'pane_KamlanagarWaterStation_23',
+            onEachFeature: pop_KamlanagarWaterStation_23,
+            style: style_KamlanagarWaterStation_23_0,
+        });
+        bounds_group.addLayer(layer_KamlanagarWaterStation_23);
+        map.addLayer(layer_KamlanagarWaterStation_23);
+        function pop_KamlanagarWaterTank_24(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KamlanagarWaterTank_24_0() {
+            return {
+                pane: 'pane_KamlanagarWaterTank_24',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KamlanagarWaterTank_24');
+        map.getPane('pane_KamlanagarWaterTank_24').style.zIndex = 424;
+        map.getPane('pane_KamlanagarWaterTank_24').style['mix-blend-mode'] = 'normal';
+        var layer_KamlanagarWaterTank_24 = new L.geoJson(json_KamlanagarWaterTank_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KamlanagarWaterTank_24',
+            layerName: 'layer_KamlanagarWaterTank_24',
+            pane: 'pane_KamlanagarWaterTank_24',
+            onEachFeature: pop_KamlanagarWaterTank_24,
+            style: style_KamlanagarWaterTank_24_0,
+        });
+        bounds_group.addLayer(layer_KamlanagarWaterTank_24);
+        map.addLayer(layer_KamlanagarWaterTank_24);
+        function pop_AsmitaWaterStation_25(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_AsmitaWaterStation_25_0() {
+            return {
+                pane: 'pane_AsmitaWaterStation_25',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AsmitaWaterStation_25');
+        map.getPane('pane_AsmitaWaterStation_25').style.zIndex = 425;
+        map.getPane('pane_AsmitaWaterStation_25').style['mix-blend-mode'] = 'normal';
+        var layer_AsmitaWaterStation_25 = new L.geoJson(json_AsmitaWaterStation_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AsmitaWaterStation_25',
+            layerName: 'layer_AsmitaWaterStation_25',
+            pane: 'pane_AsmitaWaterStation_25',
+            onEachFeature: pop_AsmitaWaterStation_25,
+            style: style_AsmitaWaterStation_25_0,
+        });
+        bounds_group.addLayer(layer_AsmitaWaterStation_25);
+        map.addLayer(layer_AsmitaWaterStation_25);
+        function pop_AsmitaWaterTank_26(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_AsmitaWaterTank_26_0() {
+            return {
+                pane: 'pane_AsmitaWaterTank_26',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AsmitaWaterTank_26');
+        map.getPane('pane_AsmitaWaterTank_26').style.zIndex = 426;
+        map.getPane('pane_AsmitaWaterTank_26').style['mix-blend-mode'] = 'normal';
+        var layer_AsmitaWaterTank_26 = new L.geoJson(json_AsmitaWaterTank_26, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AsmitaWaterTank_26',
+            layerName: 'layer_AsmitaWaterTank_26',
+            pane: 'pane_AsmitaWaterTank_26',
+            onEachFeature: pop_AsmitaWaterTank_26,
+            style: style_AsmitaWaterTank_26_0,
+        });
+        bounds_group.addLayer(layer_AsmitaWaterTank_26);
+        map.addLayer(layer_AsmitaWaterTank_26);
+        function pop_11NoWaterTank_27(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_11NoWaterTank_27_0() {
+            return {
+                pane: 'pane_11NoWaterTank_27',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_11NoWaterTank_27');
+        map.getPane('pane_11NoWaterTank_27').style.zIndex = 427;
+        map.getPane('pane_11NoWaterTank_27').style['mix-blend-mode'] = 'normal';
+        var layer_11NoWaterTank_27 = new L.geoJson(json_11NoWaterTank_27, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_11NoWaterTank_27',
+            layerName: 'layer_11NoWaterTank_27',
+            pane: 'pane_11NoWaterTank_27',
+            onEachFeature: pop_11NoWaterTank_27,
+            style: style_11NoWaterTank_27_0,
+        });
+        bounds_group.addLayer(layer_11NoWaterTank_27);
+        map.addLayer(layer_11NoWaterTank_27);
+        function pop_SilverWaterStation_28(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_SilverWaterStation_28_0() {
+            return {
+                pane: 'pane_SilverWaterStation_28',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SilverWaterStation_28');
+        map.getPane('pane_SilverWaterStation_28').style.zIndex = 428;
+        map.getPane('pane_SilverWaterStation_28').style['mix-blend-mode'] = 'normal';
+        var layer_SilverWaterStation_28 = new L.geoJson(json_SilverWaterStation_28, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SilverWaterStation_28',
+            layerName: 'layer_SilverWaterStation_28',
+            pane: 'pane_SilverWaterStation_28',
+            onEachFeature: pop_SilverWaterStation_28,
+            style: style_SilverWaterStation_28_0,
+        });
+        bounds_group.addLayer(layer_SilverWaterStation_28);
+        map.addLayer(layer_SilverWaterStation_28);
+        function pop_SilverLineWaterTank_29(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_SilverLineWaterTank_29_0() {
+            return {
+                pane: 'pane_SilverLineWaterTank_29',
+                opacity: 1,
+                color: 'rgba(244,26,4,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SilverLineWaterTank_29');
+        map.getPane('pane_SilverLineWaterTank_29').style.zIndex = 429;
+        map.getPane('pane_SilverLineWaterTank_29').style['mix-blend-mode'] = 'normal';
+        var layer_SilverLineWaterTank_29 = new L.geoJson(json_SilverLineWaterTank_29, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SilverLineWaterTank_29',
+            layerName: 'layer_SilverLineWaterTank_29',
+            pane: 'pane_SilverLineWaterTank_29',
+            onEachFeature: pop_SilverLineWaterTank_29,
+            style: style_SilverLineWaterTank_29_0,
+        });
+        bounds_group.addLayer(layer_SilverLineWaterTank_29);
+        map.addLayer(layer_SilverLineWaterTank_29);
+        function pop_NavgharWaterTank_30(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_NavgharWaterTank_30_0() {
+            return {
+                pane: 'pane_NavgharWaterTank_30',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_NavgharWaterTank_30');
+        map.getPane('pane_NavgharWaterTank_30').style.zIndex = 430;
+        map.getPane('pane_NavgharWaterTank_30').style['mix-blend-mode'] = 'normal';
+        var layer_NavgharWaterTank_30 = new L.geoJson(json_NavgharWaterTank_30, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_NavgharWaterTank_30',
+            layerName: 'layer_NavgharWaterTank_30',
+            pane: 'pane_NavgharWaterTank_30',
+            onEachFeature: pop_NavgharWaterTank_30,
+            style: style_NavgharWaterTank_30_0,
+        });
+        bounds_group.addLayer(layer_NavgharWaterTank_30);
+        map.addLayer(layer_NavgharWaterTank_30);
+        function pop_NavgharWaterStation_31(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_NavgharWaterStation_31_0() {
+            return {
+                pane: 'pane_NavgharWaterStation_31',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_NavgharWaterStation_31');
+        map.getPane('pane_NavgharWaterStation_31').style.zIndex = 431;
+        map.getPane('pane_NavgharWaterStation_31').style['mix-blend-mode'] = 'normal';
+        var layer_NavgharWaterStation_31 = new L.geoJson(json_NavgharWaterStation_31, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_NavgharWaterStation_31',
+            layerName: 'layer_NavgharWaterStation_31',
+            pane: 'pane_NavgharWaterStation_31',
+            onEachFeature: pop_NavgharWaterStation_31,
+            style: style_NavgharWaterStation_31_0,
+        });
+        bounds_group.addLayer(layer_NavgharWaterStation_31);
+        map.addLayer(layer_NavgharWaterStation_31);
+        function pop_KanakiyaWaterTank_32(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KanakiyaWaterTank_32_0() {
+            return {
+                pane: 'pane_KanakiyaWaterTank_32',
+                opacity: 1,
+                color: 'rgba(248,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KanakiyaWaterTank_32');
+        map.getPane('pane_KanakiyaWaterTank_32').style.zIndex = 432;
+        map.getPane('pane_KanakiyaWaterTank_32').style['mix-blend-mode'] = 'normal';
+        var layer_KanakiyaWaterTank_32 = new L.geoJson(json_KanakiyaWaterTank_32, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KanakiyaWaterTank_32',
+            layerName: 'layer_KanakiyaWaterTank_32',
+            pane: 'pane_KanakiyaWaterTank_32',
+            onEachFeature: pop_KanakiyaWaterTank_32,
+            style: style_KanakiyaWaterTank_32_0,
+        });
+        bounds_group.addLayer(layer_KanakiyaWaterTank_32);
+        map.addLayer(layer_KanakiyaWaterTank_32);
+        function pop_KanakiyaWaterStation_33(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_KanakiyaWaterStation_33_0() {
+            return {
+                pane: 'pane_KanakiyaWaterStation_33',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_KanakiyaWaterStation_33');
+        map.getPane('pane_KanakiyaWaterStation_33').style.zIndex = 433;
+        map.getPane('pane_KanakiyaWaterStation_33').style['mix-blend-mode'] = 'normal';
+        var layer_KanakiyaWaterStation_33 = new L.geoJson(json_KanakiyaWaterStation_33, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_KanakiyaWaterStation_33',
+            layerName: 'layer_KanakiyaWaterStation_33',
+            pane: 'pane_KanakiyaWaterStation_33',
+            onEachFeature: pop_KanakiyaWaterStation_33,
+            style: style_KanakiyaWaterStation_33_0,
+        });
+        bounds_group.addLayer(layer_KanakiyaWaterStation_33);
+        map.addLayer(layer_KanakiyaWaterStation_33);
+        function pop_GodibunderWaterStation_34(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_GodibunderWaterStation_34_0() {
+            return {
+                pane: 'pane_GodibunderWaterStation_34',
+                opacity: 1,
+                color: 'rgba(0,246,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GodibunderWaterStation_34');
+        map.getPane('pane_GodibunderWaterStation_34').style.zIndex = 434;
+        map.getPane('pane_GodibunderWaterStation_34').style['mix-blend-mode'] = 'normal';
+        var layer_GodibunderWaterStation_34 = new L.geoJson(json_GodibunderWaterStation_34, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GodibunderWaterStation_34',
+            layerName: 'layer_GodibunderWaterStation_34',
+            pane: 'pane_GodibunderWaterStation_34',
+            onEachFeature: pop_GodibunderWaterStation_34,
+            style: style_GodibunderWaterStation_34_0,
+        });
+        bounds_group.addLayer(layer_GodibunderWaterStation_34);
+        map.addLayer(layer_GodibunderWaterStation_34);
+        function pop_GodibunderWaterTank_35(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_GodibunderWaterTank_35_0() {
+            return {
+                pane: 'pane_GodibunderWaterTank_35',
+                opacity: 1,
+                color: 'rgba(255,0,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GodibunderWaterTank_35');
+        map.getPane('pane_GodibunderWaterTank_35').style.zIndex = 435;
+        map.getPane('pane_GodibunderWaterTank_35').style['mix-blend-mode'] = 'normal';
+        var layer_GodibunderWaterTank_35 = new L.geoJson(json_GodibunderWaterTank_35, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GodibunderWaterTank_35',
+            layerName: 'layer_GodibunderWaterTank_35',
+            pane: 'pane_GodibunderWaterTank_35',
+            onEachFeature: pop_GodibunderWaterTank_35,
+            style: style_GodibunderWaterTank_35_0,
+        });
+        bounds_group.addLayer(layer_GodibunderWaterTank_35);
+        map.addLayer(layer_GodibunderWaterTank_35);
+        function pop_PatlipadaStemOffice_36(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PatlipadaStemOffice_36_0() {
+            return {
+                pane: 'pane_PatlipadaStemOffice_36',
+                opacity: 1,
+                color: 'rgba(24,246,13,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PatlipadaStemOffice_36');
+        map.getPane('pane_PatlipadaStemOffice_36').style.zIndex = 436;
+        map.getPane('pane_PatlipadaStemOffice_36').style['mix-blend-mode'] = 'normal';
+        var layer_PatlipadaStemOffice_36 = new L.geoJson(json_PatlipadaStemOffice_36, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PatlipadaStemOffice_36',
+            layerName: 'layer_PatlipadaStemOffice_36',
+            pane: 'pane_PatlipadaStemOffice_36',
+            onEachFeature: pop_PatlipadaStemOffice_36,
+            style: style_PatlipadaStemOffice_36_0,
+        });
+        bounds_group.addLayer(layer_PatlipadaStemOffice_36);
+        map.addLayer(layer_PatlipadaStemOffice_36);
+        function pop_PatlipadaWaterTank_37(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PatlipadaWaterTank_37_0() {
+            return {
+                pane: 'pane_PatlipadaWaterTank_37',
+                opacity: 1,
+                color: 'rgba(246,13,13,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,13,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PatlipadaWaterTank_37');
+        map.getPane('pane_PatlipadaWaterTank_37').style.zIndex = 437;
+        map.getPane('pane_PatlipadaWaterTank_37').style['mix-blend-mode'] = 'normal';
+        var layer_PatlipadaWaterTank_37 = new L.geoJson(json_PatlipadaWaterTank_37, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PatlipadaWaterTank_37',
+            layerName: 'layer_PatlipadaWaterTank_37',
+            pane: 'pane_PatlipadaWaterTank_37',
+            onEachFeature: pop_PatlipadaWaterTank_37,
+            style: style_PatlipadaWaterTank_37_0,
+        });
+        bounds_group.addLayer(layer_PatlipadaWaterTank_37);
+        map.addLayer(layer_PatlipadaWaterTank_37);
+        function pop_PumpStation_38(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PumpStation_38_0() {
+            return {
+                pane: 'pane_PumpStation_38',
+                opacity: 1,
+                color: 'rgba(35,235,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PumpStation_38');
+        map.getPane('pane_PumpStation_38').style.zIndex = 438;
+        map.getPane('pane_PumpStation_38').style['mix-blend-mode'] = 'normal';
+        var layer_PumpStation_38 = new L.geoJson(json_PumpStation_38, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PumpStation_38',
+            layerName: 'layer_PumpStation_38',
+            pane: 'pane_PumpStation_38',
+            onEachFeature: pop_PumpStation_38,
+            style: style_PumpStation_38_0,
+        });
+        bounds_group.addLayer(layer_PumpStation_38);
+        map.addLayer(layer_PumpStation_38);
+        function pop_PhataFillingStation_39(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_PhataFillingStation_39_0() {
+            return {
+                pane: 'pane_PhataFillingStation_39',
+                opacity: 1,
+                color: 'rgba(35,254,17,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,247,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PhataFillingStation_39');
+        map.getPane('pane_PhataFillingStation_39').style.zIndex = 439;
+        map.getPane('pane_PhataFillingStation_39').style['mix-blend-mode'] = 'normal';
+        var layer_PhataFillingStation_39 = new L.geoJson(json_PhataFillingStation_39, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PhataFillingStation_39',
+            layerName: 'layer_PhataFillingStation_39',
+            pane: 'pane_PhataFillingStation_39',
+            onEachFeature: pop_PhataFillingStation_39,
+            style: style_PhataFillingStation_39_0,
+        });
+        bounds_group.addLayer(layer_PhataFillingStation_39);
+        map.addLayer(layer_PhataFillingStation_39);
+        function pop_Stem_MBR15ML_40(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>id</strong><br />' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Attribute'] !== null ? autolinker.link(feature.properties['Attribute'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Stem_MBR15ML_40_0() {
+            return {
+                pane: 'pane_Stem_MBR15ML_40',
+                opacity: 1,
+                color: 'rgba(242,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(244,26,4,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Stem_MBR15ML_40');
+        map.getPane('pane_Stem_MBR15ML_40').style.zIndex = 440;
+        map.getPane('pane_Stem_MBR15ML_40').style['mix-blend-mode'] = 'normal';
+        var layer_Stem_MBR15ML_40 = new L.geoJson(json_Stem_MBR15ML_40, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Stem_MBR15ML_40',
+            layerName: 'layer_Stem_MBR15ML_40',
+            pane: 'pane_Stem_MBR15ML_40',
+            onEachFeature: pop_Stem_MBR15ML_40,
+            style: style_Stem_MBR15ML_40_0,
+        });
+        bounds_group.addLayer(layer_Stem_MBR15ML_40);
+        map.addLayer(layer_Stem_MBR15ML_40);
+        function pop_Road_41(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Id'] !== null ? autolinker.link(feature.properties['Id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Road_41_0() {
+            return {
+                pane: 'pane_Road_41',
+                opacity: 1,
+                color: 'rgba(16,2,17,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Road_41');
+        map.getPane('pane_Road_41').style.zIndex = 441;
+        map.getPane('pane_Road_41').style['mix-blend-mode'] = 'normal';
+        var layer_Road_41 = new L.geoJson(json_Road_41, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Road_41',
+            layerName: 'layer_Road_41',
+            pane: 'pane_Road_41',
+            onEachFeature: pop_Road_41,
+            style: style_Road_41_0,
+        });
+        bounds_group.addLayer(layer_Road_41);
+        map.addLayer(layer_Road_41);
+        function pop_UlhasRiver_42(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Labels'] !== null ? autolinker.link(feature.properties['Labels'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_UlhasRiver_42_0() {
+            return {
+                pane: 'pane_UlhasRiver_42',
+                opacity: 1,
+                color: 'rgba(21,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_UlhasRiver_42');
+        map.getPane('pane_UlhasRiver_42').style.zIndex = 442;
+        map.getPane('pane_UlhasRiver_42').style['mix-blend-mode'] = 'normal';
+        var layer_UlhasRiver_42 = new L.geoJson(json_UlhasRiver_42, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_UlhasRiver_42',
+            layerName: 'layer_UlhasRiver_42',
+            pane: 'pane_UlhasRiver_42',
+            onEachFeature: pop_UlhasRiver_42,
+            style: style_UlhasRiver_42_0,
+        });
+        bounds_group.addLayer(layer_UlhasRiver_42);
+        map.addLayer(layer_UlhasRiver_42);
+        function pop_CLF_43(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_CLF_43_0() {
+            return {
+                pane: 'pane_CLF_43',
+                opacity: 1,
+                color: 'rgba(251,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_CLF_43');
+        map.getPane('pane_CLF_43').style.zIndex = 443;
+        map.getPane('pane_CLF_43').style['mix-blend-mode'] = 'normal';
+        var layer_CLF_43 = new L.geoJson(json_CLF_43, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_CLF_43',
+            layerName: 'layer_CLF_43',
+            pane: 'pane_CLF_43',
+            onEachFeature: pop_CLF_43,
+            style: style_CLF_43_0,
+        });
+        bounds_group.addLayer(layer_CLF_43);
+        map.addLayer(layer_CLF_43);
+        function pop_StemInfrastructure_44(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_StemInfrastructure_44_0() {
+            return {
+                pane: 'pane_StemInfrastructure_44',
+                opacity: 1,
+                color: 'rgba(35,248,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_StemInfrastructure_44');
+        map.getPane('pane_StemInfrastructure_44').style.zIndex = 444;
+        map.getPane('pane_StemInfrastructure_44').style['mix-blend-mode'] = 'normal';
+        var layer_StemInfrastructure_44 = new L.geoJson(json_StemInfrastructure_44, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_StemInfrastructure_44',
+            layerName: 'layer_StemInfrastructure_44',
+            pane: 'pane_StemInfrastructure_44',
+            onEachFeature: pop_StemInfrastructure_44,
+            style: style_StemInfrastructure_44_0,
+        });
+        bounds_group.addLayer(layer_StemInfrastructure_44);
+        map.addLayer(layer_StemInfrastructure_44);
+        function pop_TMCWTP_45(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_TMCWTP_45_0() {
+            return {
+                pane: 'pane_TMCWTP_45',
+                opacity: 1,
+                color: 'rgba(251,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_TMCWTP_45');
+        map.getPane('pane_TMCWTP_45').style.zIndex = 445;
+        map.getPane('pane_TMCWTP_45').style['mix-blend-mode'] = 'normal';
+        var layer_TMCWTP_45 = new L.geoJson(json_TMCWTP_45, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TMCWTP_45',
+            layerName: 'layer_TMCWTP_45',
+            pane: 'pane_TMCWTP_45',
+            onEachFeature: pop_TMCWTP_45,
+            style: style_TMCWTP_45_0,
+        });
+        bounds_group.addLayer(layer_TMCWTP_45);
+        map.addLayer(layer_TMCWTP_45);
+        function pop_Waterline_46(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Pipeline'] !== null ? autolinker.link(feature.properties['Pipeline'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lenghth'] !== null ? autolinker.link(feature.properties['Lenghth'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_Waterline_46_0() {
+            return {
+                pane: 'pane_Waterline_46',
+                opacity: 1,
+                color: 'rgba(3,3,208,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Waterline_46');
+        map.getPane('pane_Waterline_46').style.zIndex = 446;
+        map.getPane('pane_Waterline_46').style['mix-blend-mode'] = 'normal';
+        var layer_Waterline_46 = new L.geoJson(json_Waterline_46, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Waterline_46',
+            layerName: 'layer_Waterline_46',
+            pane: 'pane_Waterline_46',
+            onEachFeature: pop_Waterline_46,
+            style: style_Waterline_46_0,
+        });
+        bounds_group.addLayer(layer_Waterline_46);
+        map.addLayer(layer_Waterline_46);
+        function pop_MBMC_Ward_Boundry_47(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_MBMC_Ward_Boundry_47_0() {
+            return {
+                pane: 'pane_MBMC_Ward_Boundry_47',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MBMC_Ward_Boundry_47');
+        map.getPane('pane_MBMC_Ward_Boundry_47').style.zIndex = 447;
+        map.getPane('pane_MBMC_Ward_Boundry_47').style['mix-blend-mode'] = 'normal';
+        var layer_MBMC_Ward_Boundry_47 = new L.geoJson(json_MBMC_Ward_Boundry_47, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MBMC_Ward_Boundry_47',
+            layerName: 'layer_MBMC_Ward_Boundry_47',
+            pane: 'pane_MBMC_Ward_Boundry_47',
+            onEachFeature: pop_MBMC_Ward_Boundry_47,
+            style: style_MBMC_Ward_Boundry_47_0,
+        });
+        bounds_group.addLayer(layer_MBMC_Ward_Boundry_47);
+        map.addLayer(layer_MBMC_Ward_Boundry_47);
+        function pop_BNCMCWardBoundry_48(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_BNCMCWardBoundry_48_0() {
+            return {
+                pane: 'pane_BNCMCWardBoundry_48',
+                opacity: 1,
+                color: 'rgba(1,2,1,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BNCMCWardBoundry_48');
+        map.getPane('pane_BNCMCWardBoundry_48').style.zIndex = 448;
+        map.getPane('pane_BNCMCWardBoundry_48').style['mix-blend-mode'] = 'normal';
+        var layer_BNCMCWardBoundry_48 = new L.geoJson(json_BNCMCWardBoundry_48, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BNCMCWardBoundry_48',
+            layerName: 'layer_BNCMCWardBoundry_48',
+            pane: 'pane_BNCMCWardBoundry_48',
+            onEachFeature: pop_BNCMCWardBoundry_48,
+            style: style_BNCMCWardBoundry_48_0,
+        });
+        bounds_group.addLayer(layer_BNCMCWardBoundry_48);
+        map.addLayer(layer_BNCMCWardBoundry_48);
+        function pop_STEM_Village_DB_49(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (var i in e.target._eventParents) {
+                        if (typeof e.target._eventParents[i].resetStyle === 'function') {
+                            e.target._eventParents[i].resetStyle(e.target);
+                        }
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Village Name'] !== null ? autolinker.link(feature.properties['Village Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lat'] !== null ? autolinker.link(feature.properties['Lat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Long'] !== null ? autolinker.link(feature.properties['Long'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Ref'] !== null ? autolinker.link(feature.properties['Ref'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+        }
+
+        function style_STEM_Village_DB_49_0() {
+            return {
+                pane: 'pane_STEM_Village_DB_49',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(3,16,8,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_STEM_Village_DB_49');
+        map.getPane('pane_STEM_Village_DB_49').style.zIndex = 449;
+        map.getPane('pane_STEM_Village_DB_49').style['mix-blend-mode'] = 'normal';
+        var layer_STEM_Village_DB_49 = new L.geoJson(json_STEM_Village_DB_49, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_STEM_Village_DB_49',
+            layerName: 'layer_STEM_Village_DB_49',
+            pane: 'pane_STEM_Village_DB_49',
+            onEachFeature: pop_STEM_Village_DB_49,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_STEM_Village_DB_49_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_STEM_Village_DB_49);
+        map.addLayer(layer_STEM_Village_DB_49);
+        var baseMaps = {};
+        var overlaysTree = [
+            {label: '<img src="legend/STEM_Village_DB_49.png" /> STEM_Village_DB', layer: layer_STEM_Village_DB_49},
+            {label: '<img src="legend/BNCMCWardBoundry_48.png" /> BNCMC Ward Boundry', layer: layer_BNCMCWardBoundry_48},
+            {label: '<img src="legend/MBMC_Ward_Boundry_47.png" /> MBMC_Ward_Boundry', layer: layer_MBMC_Ward_Boundry_47},
+            {label: '<img src="legend/Waterline_46.png" /> Waterline', layer: layer_Waterline_46},
+        {label: '<b>WTP Temghar</b>', selectAllCheckbox: true, children: [
+            {label: '<img src="legend/TMCWTP_45.png" /> TMC WTP', layer: layer_TMCWTP_45},
+            {label: '<img src="legend/StemInfrastructure_44.png" /> Stem Infrastructure', layer: layer_StemInfrastructure_44},
+            {label: '<img src="legend/CLF_43.png" /> CLF', layer: layer_CLF_43},]},
+            {label: '<img src="legend/UlhasRiver_42.png" /> Ulhas River', layer: layer_UlhasRiver_42},
+            {label: '<img src="legend/Road_41.png" /> Road', layer: layer_Road_41},
+            {label: '<img src="legend/Stem_MBR15ML_40.png" /> Stem_MBR 15ML', layer: layer_Stem_MBR15ML_40},
+            {label: '<img src="legend/PhataFillingStation_39.png" /> Phata Filling Station', layer: layer_PhataFillingStation_39},
+            {label: '<img src="legend/PumpStation_38.png" /> Pump Station', layer: layer_PumpStation_38},
+            {label: '<img src="legend/PatlipadaWaterTank_37.png" /> Patlipada Water Tank', layer: layer_PatlipadaWaterTank_37},
+            {label: '<img src="legend/PatlipadaStemOffice_36.png" /> Patlipada Stem Office', layer: layer_PatlipadaStemOffice_36},
+            {label: '<img src="legend/GodibunderWaterTank_35.png" /> Godibunder Water Tank', layer: layer_GodibunderWaterTank_35},
+            {label: '<img src="legend/GodibunderWaterStation_34.png" /> Godibunder Water Station', layer: layer_GodibunderWaterStation_34},
+            {label: '<img src="legend/KanakiyaWaterStation_33.png" /> Kanakiya Water Station', layer: layer_KanakiyaWaterStation_33},
+            {label: '<img src="legend/KanakiyaWaterTank_32.png" /> Kanakiya Water Tank', layer: layer_KanakiyaWaterTank_32},
+            {label: '<img src="legend/NavgharWaterStation_31.png" /> Navghar Water Station', layer: layer_NavgharWaterStation_31},
+            {label: '<img src="legend/NavgharWaterTank_30.png" /> Navghar Water Tank', layer: layer_NavgharWaterTank_30},
+            {label: '<img src="legend/SilverLineWaterTank_29.png" /> Silver Line Water Tank', layer: layer_SilverLineWaterTank_29},
+            {label: '<img src="legend/SilverWaterStation_28.png" /> Silver Water Station', layer: layer_SilverWaterStation_28},
+            {label: '<img src="legend/11NoWaterTank_27.png" /> 11 No. Water Tank', layer: layer_11NoWaterTank_27},
+            {label: '<img src="legend/AsmitaWaterTank_26.png" /> Asmita Water Tank', layer: layer_AsmitaWaterTank_26},
+            {label: '<img src="legend/AsmitaWaterStation_25.png" /> Asmita Water Station', layer: layer_AsmitaWaterStation_25},
+            {label: '<img src="legend/KamlanagarWaterTank_24.png" /> Kamlanagar Water Tank', layer: layer_KamlanagarWaterTank_24},
+            {label: '<img src="legend/KamlanagarWaterStation_23.png" /> Kamlanagar Water Station', layer: layer_KamlanagarWaterStation_23},
+            {label: '<img src="legend/777WaterStation_22.png" /> 777 Water Station', layer: layer_777WaterStation_22},
+            {label: '<img src="legend/777WaterTank_21.png" /> 777 Water Tank', layer: layer_777WaterTank_21},
+            {label: '<img src="legend/GoddevWaterStation_20.png" /> Goddev Water Station', layer: layer_GoddevWaterStation_20},
+            {label: '<img src="legend/GoddevWaterTank_19.png" /> Goddev Water Tank', layer: layer_GoddevWaterTank_19},
+            {label: '<img src="legend/SudamaWaterTank_18.png" /> Sudama Water Tank', layer: layer_SudamaWaterTank_18},
+            {label: '<img src="legend/SudamaWaterStation_17.png" /> Sudama Water Station', layer: layer_SudamaWaterStation_17},
+            {label: '<img src="legend/PanjuWaterTank_16.png" /> Panju Water Tank', layer: layer_PanjuWaterTank_16},
+            {label: '<img src="legend/PanjuWaterStation_15.png" /> Panju Water Station', layer: layer_PanjuWaterStation_15},
+            {label: '<img src="legend/MurvaWaterTank_14.png" /> Murva Water Tank', layer: layer_MurvaWaterTank_14},
+            {label: '<img src="legend/DongriWaterStation_13.png" /> Dongri Water Station', layer: layer_DongriWaterStation_13},
+            {label: '<img src="legend/DongriWaterTank_12.png" /> Dongri Water Tank', layer: layer_DongriWaterTank_12},
+            {label: '<img src="legend/MiraGavWaterTank_11.png" /> Mira Gav Water Tank', layer: layer_MiraGavWaterTank_11},
+            {label: '<img src="legend/MiraGavWaterStation_10.png" /> Mira Gav Water Station', layer: layer_MiraGavWaterStation_10},
+            {label: '<img src="legend/MiraMIDCWaterStation_9.png" /> Mira MIDC Water Station', layer: layer_MiraMIDCWaterStation_9},
+            {label: '<img src="legend/MiraMIDCWaterTank_8.png" /> Mira MIDC Water Tank', layer: layer_MiraMIDCWaterTank_8},
+            {label: '<img src="legend/ChinaVillageWaterTank_7.png" /> China Village Water Tank', layer: layer_ChinaVillageWaterTank_7},
+            {label: '<img src="legend/ChinaWaterStation_6.png" /> China Water Station', layer: layer_ChinaWaterStation_6},
+            {label: '<img src="legend/KashimiraWaterTank_5.png" /> Kashimira Water Tank', layer: layer_KashimiraWaterTank_5},
+            {label: '<img src="legend/KashmiraWaterStation_4.png" /> Kashmira Water Station', layer: layer_KashmiraWaterStation_4},
+            {label: '<img src="legend/MurvaWaterStation_3.png" /> Murva Water Station', layer: layer_MurvaWaterStation_3},
+            {label: '<img src="legend/Grid_SHP_2.png" /> Grid_SHP', layer: layer_Grid_SHP_2},
+            {label: "Merge_Toposheet", layer: layer_Merge_Toposheet_1},
+            {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
+        var lay = L.control.layers.tree(null, overlaysTree,{
+            //namedToggle: true,
+            //selectorBack: false,
+            //closedSymbol: '&#8862; &#x1f5c0;',
+            //openedSymbol: '&#8863; &#x1f5c1;',
+            //collapseAll: 'Collapse all',
+            //expandAll: 'Expand all',
+            collapsed: true,
+        });
+        lay.addTo(map);
+        setBounds();
+        var i = 0;
+        layer_STEM_Village_DB_49.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Village Name'] !== null?String('<div style="color: #0d0ee6; font-size: 10pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Village Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_STEM_Village_DB_49'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        L.ImageOverlay.include({
+            getBounds: function () {
+                return this._bounds;
+            }
+        });
+        resetLabels([layer_STEM_Village_DB_49]);
+        map.on("zoomend", function(){
+            resetLabels([layer_STEM_Village_DB_49]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_STEM_Village_DB_49]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_STEM_Village_DB_49]);
+        });
+        </script>
     </body>
 </html>
